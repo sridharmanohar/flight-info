@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Flight Information</title>
+</head>
+<body>
+	
+	<table th:object="${flightInfo}">
+		<thead>
+			<tr>
+				<th style="width: 450px;">ICAO24</th>
+				<th style="width: 450px;">Callsign</th>
+				<th style="width: 450px;">Origin Country</th>
+				<th style="width: 450px;">Current Position (Long.)</th>
+				<th style="width: 450px;">Current Position (Lat.)</th>
+				<th style="width: 450px;">Altitude</th>
+				<th style="width: 450px;">Velocity</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td align="center" th:text="*{states == null} ? 'No Data' : *{states[0][0]}"/>
+				<td align="center" th:text="*{states == null} ? 'No Data' : *{states[0][1]}"/>
+				<td align="center" th:text="*{states == null} ? 'No Data' : *{states[0][2]}"/>
+				<td align="center" th:text="*{states == null} ? 'No Data' : *{states[0][5]}"/>
+				<td align="center" th:text="*{states == null} ? 'No Data' : *{states[0][6]}"/>
+				<td align="center" th:text="*{states == null} ? 'No Data' : *{states[0][7]} + ' Feet'"/>
+				<td align="center" th:text="*{states == null} ? 'No Data' : *{states[0][9]} +  ' Kmph'"/>
+			</tr>
+		</tbody>
+
+	</table>
+	
+</body>
+</html>
